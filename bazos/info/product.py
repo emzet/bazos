@@ -1,6 +1,6 @@
 import os
 from os import path
-from currency_converter import CurrencyConverter
+# from currency_converter import CurrencyConverter
 
 product_info = {
     'rubric': '>>RUBRIC',

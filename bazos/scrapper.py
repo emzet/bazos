@@ -226,11 +226,11 @@ class BazosScrapper:
     def add_advertisement(self, product: Product):
         # Rubrik
         select_rubrik = Select(self.driver.find_element(By.XPATH, XPathsBazos.product_rubric))
-        select_rubrik.select_by_visible_text(get_rubric(self.country, product.rubric))
+        select_rubrik.select_by_visible_text(product.rubric)
 
         # Product
         select_category = Select(self.driver.find_element(By.XPATH, XPathsBazos.product_category))
-        select_category.select_by_visible_text(get_category(self.country, product.rubric, product.category))
+        select_category.select_by_visible_text(product.category)
         self.driver.find_element(By.ID, 'nadpis').send_keys(product.title)
         self.driver.find_element(By.ID, 'popis').send_keys(product.description)
 
